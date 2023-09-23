@@ -1,0 +1,98 @@
+body{background-color:pink; margin:0; padding:0;}
+@font-face{font-family :"Baby"; src:url('../font/Baby.ttf')}
+@font-face{font-family :"Picturama"; src:url('../font/Picturama.otf')}
+
+.global{
+	width:100%;
+	height:630px;
+	background-color:#E6E6FA;
+}
+
+.header{
+	width:100%;
+	height:150px;
+	background-color:#F0FFFF;
+}
+.header h1 {
+	font-family:Baby;
+}
+
+.nav{
+	width:100%;
+	height:50px;
+	background-color:#F0F8FF;
+	
+}
+
+.content{
+	width:100%;
+	height:450px;
+	background-color:#FFFAF0;
+	float:left;
+}
+
+.content h2 {
+	width:450px;
+	font-family:Picturama;
+	background-color:lightgrey;
+	border-radius: 10px 10px 10px 10px;
+	text-align:center;	
+	margin:0 auto;
+}
+
+.p1 p{
+	padding:10px;
+	background-color:lightgrey;
+	border-radius: 20px 20px 0px 0px;
+	margin:25px;
+}
+
+.p2 p{
+	padding:10px;
+	background-color:lightgrey;
+	border-radius: 30px 30px 30px 30px;
+	margin:25px;
+}
+
+.bloc_image{
+	width:250px;
+	height:250px;
+	background-color:lightgrey;
+	margin:20px;
+	float:left;
+	border-radius: 30px 30px 30px 30px;	
+}
+
+.content img {
+	
+}
+
+
+#menu{
+	list-style-type:none;
+	height:40px;
+	padding:0;
+	margin:0;
+	font-family:arial;
+	font-size:22px;
+	text-align:center;
+}
+#menu li {
+	float:left;
+	position:relative;
+	padding:0;
+	line-height:8px;
+	width:25%;
+}
+#menu li a {
+	display:block;
+	padding:15px 2px;
+	color:darklavender;
+	text-decoration:none;	
+}
+#menu li:hover {
+	background:lavender;
+}
+#menu li a:hover {
+	color:#6495ED;
+}
