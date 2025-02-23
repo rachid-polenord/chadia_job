@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Travailler en EU - 2025</title>
+    <title>Travailler en Belgique - 2025</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* CSS intégré ici pour la simplicité */
@@ -21,31 +21,52 @@
             background-color: #1e3d58;
             color: white;
             padding: 15px;
-            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
+        /* Logo "Chadia_job" à gauche */
         header h1 {
             margin: 0;
             font-size: 24px;
+            display: block; /* Toujours affiché en mode plein écran */
         }
 
         .header-nav {
-            text-align: center;
-            margin-top: 10px;
+            display: flex;
+            gap: 0; /* Supprimer l'espace entre les liens */
+            width: 100%; /* Assurer que les liens prennent toute la largeur */
+            justify-content: center; /* Centrer le menu */
         }
 
         .header-nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            text-align: center;
+            width: 150px; /* Largeur fixe alignée sur le plus long lien "Luxembourg" */
             font-size: 18px;
             padding: 8px 15px;
             border-radius: 5px;
             background-color: #2a5674;
+            display: block; /* Assurer que le lien occupe tout l'espace */
         }
 
         .header-nav a:hover {
             background-color: #4b7d94;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
         }
 
         .container {
@@ -87,38 +108,35 @@
             gap: 15px;
         }
 
-.vignettes a {
-    text-align: center;
-    width: 150px;
-    height: 150px;  /* Hauteur fixée pour la vignette */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    display: flex;
-    flex-direction: column;  /* Mettre les éléments en colonne */
-    justify-content: space-between; /* Espacer l'image et le texte */
-    padding: 0;  /* Retirer les marges internes */
-}
+        .vignettes a {
+            text-align: center;
+            width: 150px;
+            height: 150px;  /* Hauteur fixée pour la vignette */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;  /* Mettre les éléments en colonne */
+            justify-content: space-between; /* Espacer l'image et le texte */
+            padding: 0;  /* Retirer les marges internes */
+        }
 
-.vignettes img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* L'image prend toute la taille de la vignette */
-}
+        .vignettes img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* L'image prend toute la taille de la vignette */
+        }
 
-.vignettes p {
-    margin-top: 10px;  /* Espacer le texte de l'image */
-    font-size: 14px;  /* Taille du texte */
-    color: #333;  /* Couleur du texte */
-}
-
-
+        .vignettes p {
+            margin-top: 10px;  /* Espacer le texte de l'image */
+            font-size: 14px;  /* Taille du texte */
+            color: #333;  /* Couleur du texte */
+        }
 
         .vignettes a:hover {
             transform: scale(1.05);
         }
-
 
         footer {
             background-color: #2a5674;
@@ -130,20 +148,55 @@
             bottom: 0;
         }
 
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none; /* Masquer le menu */
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-nav.active {
+                display: flex; /* Afficher le menu quand "active" */
+            }
+
+            header h1 {
+                display: none; /* Masquer le titre quand le menu est replié */
+            }
+
+            .hamburger {
+                display: flex; /* Afficher le bouton hamburger */
+            }
+        }
+
+        /* Mode plein écran : titre visible */
+        @media (min-width: 769px) {
+            header h1 {
+                display: block; /* Afficher le titre en plein écran */
+            }
+
+            .hamburger {
+                display: none; /* Masquer le hamburger en plein écran */
+            }
+        }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Travailler en Europe - Chadia 02-2025</h1>
-    <div class="header-nav">
-        <a href="#" id="link-page1">Belgique</a>
-        <a href="#" id="link-page2">France</a>
-        <a href="#" id="link-page3">Luxembourg</a>
-        <a href="#" id="link-page4">A VENIR</a>
-        <a href="contact.html">Contact Aziz</a>
-    </div>
-</header>
+    <header>
+        <h1>Chadia_job</h1> <!-- Titre affiché uniquement en mode plein écran -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="header-nav" id="menu">
+            <a href="#" id="link-page1">Belgique</a>
+            <a href="#" id="link-page2">France</a>
+            <a href="#" id="link-page3">Luxembourg</a>
+            <a href="#" id="link-page4">A VENIR</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
 
 <!-- Page 1 Section -->
 <div id="page1" class="container">
@@ -394,37 +447,43 @@
 <footer>
     <p>&copy; 2025 Chadia. Tous droits réservés.</p>
 </footer>
+        <script>
+            // Code pour navigation entre les pages
+            document.getElementById('link-page1').addEventListener('click', function () {
+                document.querySelectorAll('.container').forEach(function (page) {
+                    page.style.display = 'none';
+                });
+                document.getElementById('page1').style.display = 'block';
+            });
 
-<script>
-    // Code pour navigation entre les pages
-    document.getElementById('link-page1').addEventListener('click', function () {
-        document.querySelectorAll('.container').forEach(function (page) {
-            page.style.display = 'none';
-        });
-        document.getElementById('page1').style.display = 'block';
-    });
+            document.getElementById('link-page2').addEventListener('click', function () {
+                document.querySelectorAll('.container').forEach(function (page) {
+                    page.style.display = 'none';
+                });
+                document.getElementById('page2').style.display = 'block';
+            });
 
-    document.getElementById('link-page2').addEventListener('click', function () {
-        document.querySelectorAll('.container').forEach(function (page) {
-            page.style.display = 'none';
-        });
-        document.getElementById('page2').style.display = 'block';
-    });
+            document.getElementById('link-page3').addEventListener('click', function () {
+                document.querySelectorAll('.container').forEach(function (page) {
+                    page.style.display = 'none';
+                });
+                document.getElementById('page3').style.display = 'block';
+            });
 
-    document.getElementById('link-page3').addEventListener('click', function () {
-        document.querySelectorAll('.container').forEach(function (page) {
-            page.style.display = 'none';
-        });
-        document.getElementById('page3').style.display = 'block';
-    });
+            document.getElementById('link-page4').addEventListener('click', function () {
+                document.querySelectorAll('.container').forEach(function (page) {
+                    page.style.display = 'none';
+                });
+                document.getElementById('page4').style.display = 'block';
+            });
 
-    document.getElementById('link-page4').addEventListener('click', function () {
-        document.querySelectorAll('.container').forEach(function (page) {
-            page.style.display = 'none';
-        });
-        document.getElementById('page4').style.display = 'block';
-    });
-</script>
+            // Code pour le menu hamburger
+            document.getElementById('hamburger').addEventListener('click', function () {
+                document.getElementById('menu').classList.toggle('active');
+                document.querySelector('header h1').style.display = document.getElementById('menu').classList.contains('active') ? 'none' : 'block';
+            });
+        </script>
+    </div>
 
 </body>
 </html>
